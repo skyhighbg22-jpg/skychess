@@ -8,26 +8,28 @@ interface StreakCounterProps {
 
 export default function StreakCounter({ currentStreak, longestStreak, daysThisMonth }: StreakCounterProps) {
   return (
-    <div className="streak-counter">
-      <h3>Your Streaks</h3>
-      <div className="streak-grid">
-        <div className="streak-item active-streak">
-          <Flame className="streak-flame" size={40} />
-          <div className="streak-info">
-            <p className="streak-number">{currentStreak}</p>
-            <p className="streak-label">Current Streak</p>
+    <div className="space-y-6">
+      <h3 className="text-2xl font-heading font-bold text-neon-cyan">Your Streaks</h3>
+      <div className="grid grid-cols-3 gap-4 md:gap-6">
+        <div className="p-4 rounded-lg bg-gradient-to-br from-neon-orange/20 to-neon-red/10 border border-neon-orange/30 text-center card-neon hover:scale-105 transition">
+          <div className="flex justify-center mb-3">
+            <Flame className="text-neon-orange animate-pulse" size={40} />
           </div>
+          <p className="text-3xl font-bold text-neon-orange font-heading">{currentStreak}</p>
+          <p className="text-sm text-muted-foreground mt-2">Current Streak</p>
         </div>
-        <div className="streak-item">
-          <Flame className="streak-flame" size={40} />
-          <div className="streak-info">
-            <p className="streak-number">{longestStreak}</p>
-            <p className="streak-label">Longest Streak</p>
+
+        <div className="p-4 rounded-lg bg-gradient-to-br from-neon-yellow/20 to-neon-orange/10 border border-neon-yellow/30 text-center card-neon hover:scale-105 transition">
+          <div className="flex justify-center mb-3">
+            <Flame className="text-neon-yellow" size={40} />
           </div>
+          <p className="text-3xl font-bold text-neon-yellow font-heading">{longestStreak}</p>
+          <p className="text-sm text-muted-foreground mt-2">Longest Streak</p>
         </div>
-        <div className="streak-item">
-          <p className="streak-number">{daysThisMonth}</p>
-          <p className="streak-label">Days This Month</p>
+
+        <div className="p-4 rounded-lg bg-gradient-to-br from-neon-cyan/20 to-neon-blue/10 border border-neon-cyan/30 text-center card-neon hover:scale-105 transition">
+          <p className="text-3xl font-bold text-neon-cyan font-heading">{daysThisMonth}</p>
+          <p className="text-sm text-muted-foreground mt-2">Days This Month</p>
         </div>
       </div>
     </div>
