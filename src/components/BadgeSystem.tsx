@@ -17,14 +17,28 @@ const badges: Badge[] = [
 
 export default function BadgeSystem() {
   return (
-    <div className="badge-system">
-      <h3>Achievements</h3>
-      <div className="badge-grid">
+    <div className="space-y-6">
+      <h3 className="text-2xl font-heading font-bold text-neon-cyan">Achievements</h3>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-lg bg-neon-darkblue/30 border border-neon-cyan/20">
         {badges.map((badge) => (
-          <div key={badge.id} className={`badge-item ${badge.unlocked ? 'unlocked' : 'locked'}`}>
-            <div className="badge-icon">{badge.icon}</div>
-            <p className="badge-name">{badge.name}</p>
-            <p className="badge-desc">{badge.description}</p>
+          <div
+            key={badge.id}
+            className={`card-neon text-center transition
+              ${
+                badge.unlocked
+                  ? 'opacity-100 hover:scale-110'
+                  : 'opacity-50 grayscale hover:opacity-75'
+              }`}
+          >
+            <div className="flex justify-center mb-3 ${badge.unlocked ? 'text-neon-cyan' : 'text-muted-foreground'}">
+              {badge.icon}
+            </div>
+            <p className="badge-name font-semibold text-sm text-center transition">
+              {badge.name}
+            </p>
+            <p className="badge-desc text-xs text-muted-foreground mt-2 text-center">
+              {badge.description}
+            </p>
           </div>
         ))}
       </div>
