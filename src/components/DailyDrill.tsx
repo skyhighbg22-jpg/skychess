@@ -3,10 +3,9 @@ import { Calendar, Flame, Award } from 'lucide-react'
 interface DailyDrillProps {
   streak: number
   lastCompleted: string
-  totalCompleted: number
 }
 
-export default function DailyDrill({ streak, lastCompleted, _totalCompleted }: DailyDrillProps) {
+export default function DailyDrill({ streak, lastCompleted}: DailyDrillProps) {
   return (
     <div className="space-y-6 p-6 rounded-lg bg-gradient-to-br from-neon-darkblue/40 to-neon-purple/20 border border-neon-cyan/20">
       <div className="flex items-center gap-3 mb-6">
