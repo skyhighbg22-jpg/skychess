@@ -122,7 +122,7 @@ export default function App() {
             <div key={idx} className="faq-item">
               <button
                 className="faq-question"
-                onClick={() => setExpandedSection(expandedSection === idx ? null : idx.toString())}
+                onClick={() => setExpandedSection(expandedSection === idx.toString() ? null : idx.toString())}
               >
                 {item.q}
                 <ChevronDown size={20} />
